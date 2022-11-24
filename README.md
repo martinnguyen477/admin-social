@@ -44,3 +44,17 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Structure Project
+### components
+Chứa các components dùng chung (Button, Grid, Select, ....)
+
+### pages
+Chứa các trang giao diện như là Login, Main, Report
+
+### services
+Chứa các hàm, method dùng để gọi API
+
+### stores
+Dùng để thao tác redux - xử lý logic trên client
