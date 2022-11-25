@@ -1,25 +1,33 @@
 import './App.css';
 import './styles/sb-admin-2.min.css';
 import { Admin } from './pages/Admin/Admin';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import { PrivateRoute } from './components';
 import { Login } from './pages/Account';
-import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { AccountRoute } from './components/AccountRoute';
 
 function App() {
   return (
     <div className='App' id='wrapper'>
       <Router>
         <Routes>
-          <Route path='/login' element={<Login/>}></Route>
+        <Route
+            path="*"
+            element={
+              <AccountRoute>
+                <Login />
+              </AccountRoute>
+            }
+          />
+          <Route path='/login' element={<Login />}></Route>
           <Route
-          path="*"
-          element={
-            <PrivateRoute>
-              <Admin />
-            </PrivateRoute>
-          }
-        />
+            path="*"
+            element={
+              <PrivateRoute>
+                <Admin />
+              </PrivateRoute>
+            }
+          />
         </Routes>
       </Router>
     </div>
