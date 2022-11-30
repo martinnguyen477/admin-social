@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router';
+import { Navigate, RouteProps } from 'react-router';
 import { AppState } from '../stores';
 import { AccountState } from '../stores/account/types';
 interface PropsChild {
@@ -7,10 +7,9 @@ interface PropsChild {
   // any props that come into the component
 }
 
-export const AccountRoute = ({ children }: PropsChild) => {
-  
+export const AccountRoute = ({ children}: PropsChild) : JSX.Element => {
   //Lấy thông tin account state từ Store vào để dùng.
   const account: AccountState = useSelector((state: AppState) => state.account);
-
-  return account.token ? <Navigate to='/admin/home' /> : <Navigate to='/login' />;
+  debugger;
+  return account.token ? children : <Navigate to='/login' />;
 };

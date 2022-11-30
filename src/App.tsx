@@ -12,16 +12,13 @@ function App() {
       <Router>
         <Routes>
         <Route
-            path="*"
+            path="/login"
             element={
-              <AccountRoute>
                 <Login />
-              </AccountRoute>
             }
           />
-          <Route path='/login' element={<Login />}></Route>
           <Route
-            path="*"
+            path="/"
             element={
               <PrivateRoute>
                 <Admin />

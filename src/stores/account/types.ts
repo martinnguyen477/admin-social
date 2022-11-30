@@ -1,5 +1,5 @@
 /*
-    NỘI DUNG CLASS NÀY: SỬ DỤNG DÙNG ĐỂ KHAI BÁO CÁC ACTION VÀ ĐỊNH NGHĨA STATE 
+    NỘI DUNG CLASS NÀY: SỬ DỤNG DÙNG ĐỂ KHAI BÁO CÁC ACTION VÀ STATE 
 
     REDUX - ACTION:
     + Có các Interface Action
@@ -10,8 +10,8 @@
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
-
 export const LOG_OUT = 'LOG_OUT';
+
 
 // Đăng nhập xong thì map với các thông tin sau.
 export interface AuthenticatedUser {

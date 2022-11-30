@@ -17,7 +17,7 @@ import {
 
   /*
     REDUX - REDUCER: 
-    + Đầu vào của Reducer là Action và State.
+    + Đầu vào của Reducers là Action và State ban đầu.
     + Đầu ra là State mới --> Store sẽ hứng kết quả từ Reducers
   */
   const accountReducer = (
