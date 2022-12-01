@@ -1,34 +1,29 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
-import { logout } from '../../stores/account/actions';
+import { login, logout } from '../../stores/account/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppState } from '../../stores';
-import { useLocation, useNavigate } from 'react-router';
-import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS } from '../../stores/account/types';
-import { userService } from '../../services';
+import { useNavigate } from 'react-router';
 import { Loading } from '../../components/Loading';
-import { LocationState } from '../../components/LocationState';
 
 export const Login = () => {
   const [inputs, setInputs] = useState({
     email: '',
     password: '',
   });
-
-
   const [submitted, setSubmitted] = useState(false);
 
   const loading = useSelector<AppState>((state) => state.account.loading);
+  const tokenLogin = useSelector<AppState>((state) => state.account.token);
 
   const { email, password } = inputs;
-
   const dispatch = useDispatch();
-  const location = useLocation();
-  let navigate = useNavigate();
-
-
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(logout());
   }, []);
+
+  if(tokenLogin != null) 
+    navigate('/'); 
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -38,29 +33,7 @@ export const Login = () => {
     e.preventDefault();
     setSubmitted(true);
     if (email && password) {
-      const { from } = location.state  as LocationState|| { from: { pathname: '/' } };
-      dispatch({
-        type: LOGIN_REQUEST,
-        payload: {
-          email: email,
-          password: password,
-        },
-      });
-
-      userService.login(email, password).then(
-        (res) => {
-          dispatch({
-            type: LOGIN_SUCCESS,
-            payload: res
-          });
-          navigate('/');
-        }, (error) => {
-          dispatch({
-            type: LOGIN_FAILURE,
-            payload: { error: error.toString() }
-          });
-        }
-      );
+      login(email, password)(dispatch);
     }
   };
 

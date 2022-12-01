@@ -31,7 +31,6 @@ const handleResponse = (response: any) => {
             }
 
             const error = (data && data.message) || response.statusText;
-            console.log(error);
             return Promise.reject(error);
         }
         return data;

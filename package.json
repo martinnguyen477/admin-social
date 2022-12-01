@@ -59,5 +59,8 @@
     "whitelist": [
       "API_URL"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-import": "^2.26.0"
   }
 }

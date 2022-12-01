@@ -2,6 +2,7 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunkMiddleware from 'redux-thunk';
 import { accountReducer } from "./account/reducers";
+
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import { persistReducer, persistStore } from "redux-persist";
 
@@ -16,7 +17,6 @@ const persistConfig = {
 const rootReducer = combineReducers({
   account: accountReducer
 });
-
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
@@ -38,8 +38,6 @@ const configureStore = () => {
   return createStore(persistedReducer, composeEnhancers(middlewareEnhancer));
 }
 const store = configureStore()
-let persistor = persistStore(store)
+const persistorReducer = persistStore(store)
 
-export {
-  store, persistor
-}
+export { store, persistorReducer }

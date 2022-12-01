@@ -5,15 +5,13 @@ import {
     LOGIN_SUCCESS,
     LOG_OUT,
   } from './types';
-  
-  import { Dispatch } from 'react';
-  import { history } from '../../helpers';
+
+  import { Dispatch } from 'redux';
   import { userService } from './../../services';
 
-export const login = (email: string, password: string, from: string) => {
+export const login = (email: string, password: string) => {
     return (dispatch: Dispatch<AccountActionTypes>) => {
         //STEP 1:
-        console.log(dispatch);
         dispatch({
             type: LOGIN_REQUEST,
             payload: {
@@ -28,7 +26,6 @@ export const login = (email: string, password: string, from: string) => {
                     type: LOGIN_SUCCESS,
                     payload: res
                 });
-                history.push('/admin');
             },(error) => {
                 dispatch({
                     type: LOGIN_FAILURE,
