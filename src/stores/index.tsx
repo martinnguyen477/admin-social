@@ -5,6 +5,7 @@ import { accountReducer } from "./account/reducers";
 
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import { persistReducer, persistStore } from "redux-persist";
+import { setAuthToken } from "../helpers/set-auth-token";
 
 const persistConfig = {
   key: 'root',
@@ -41,3 +42,18 @@ const store = configureStore()
 const persistorReducer = persistStore(store)
 
 export { store, persistorReducer }
+
+let currentState = store.getState() as AppState;
+
+store.subscribe(() => {
+  // keep track of the previous and current state to compare changes
+  const previousState = currentState;
+  currentState = store.getState() as AppState;
+  // if the token changes set the value in localStorage and axios headers
+  if (previousState.account.token !== currentState.account.token) {
+    const token = currentState.account.token;
+    if (token) {
+      setAuthToken(token);
+    }
+  }
+})

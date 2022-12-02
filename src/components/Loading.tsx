@@ -1,6 +1,6 @@
 
 interface PropsChild {
-    isLoading?: any
+    isLoading?: boolean
     // any props that come into the component
   }
 export const Loading = ({ isLoading} : PropsChild) => {

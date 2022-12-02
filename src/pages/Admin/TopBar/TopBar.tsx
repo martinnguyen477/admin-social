@@ -1,10 +1,15 @@
 import { useState } from 'react'
-import { useDispatch } from 'react-redux';
-import { logout } from '../../../stores/account/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppState } from 'stores';
+import { logout } from 'stores/account/actions';
+import { AuthenticatedUser } from 'stores/account/types';
 
 export const TopBar = () => {
     const [isShowProfileDropdown, setIsShowProfileDropdown] = useState(false);
     const dispatch = useDispatch();
+    const user = useSelector<AppState>(
+        (state) => state.account.user
+      ) as AuthenticatedUser;
 
     return (
             <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -155,8 +160,8 @@ export const TopBar = () => {
                     {/* Nav Item - User Information */}
                     <li className={'nav-item dropdown no-arrow' + (isShowProfileDropdown ? ' show' : ' ')}>
                         <a className="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded={isShowProfileDropdown}>
-                            <span className="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                            <img className="img-profile rounded-circle" src="img/undraw_profile.svg" onClick={() => setIsShowProfileDropdown(!isShowProfileDropdown)}/>
+                            <span className="mr-2 d-none d-lg-inline text-gray-600 small">{user?.first_name}</span>
+                            <img className="img-profile rounded-circle"  src={user?.avatar} onClick={() => setIsShowProfileDropdown(!isShowProfileDropdown)}/>
                         </a>
                         {/* Dropdown - User Information */}
                         <div className={'dropdown-menu dropdown-menu-right shadow animated--grow-in' + (isShowProfileDropdown ? ' show' : '') } aria-labelledby="userDropdown">

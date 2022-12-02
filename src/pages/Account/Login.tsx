@@ -12,7 +12,7 @@ export const Login = () => {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const loading = useSelector<AppState>((state) => state.account.loading);
+  const loading = !!useSelector<AppState>((state) => state.account.loading);
   const tokenLogin = useSelector<AppState>((state) => state.account.token);
 
   const { email, password } = inputs;
