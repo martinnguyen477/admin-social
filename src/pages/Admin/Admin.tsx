@@ -1,6 +1,7 @@
 import { Fragment, useEffect } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router';
+import { AppState } from 'stores';
 import { getCurrentLoginUser } from 'stores/account/actions';
 import { Home } from './Home/Home';
 import { LeftMenu } from './LeftMenu/LeftMenu';
@@ -10,6 +11,8 @@ import { Users } from './Users/Users';
 
 export const Admin = () => {
   const dispatch = useDispatch();
+  const alert = useSelector((state: AppState) => state.alert);
+  
   useEffect(() => {
     getCurrentLoginUser()(dispatch);
   }, []);
@@ -22,6 +25,9 @@ export const Admin = () => {
         {/* Main Content */}
         <div id="content">
           <TopBar />
+          {alert.message && (
+              <div className={`alert ${alert.type}`}>{alert.message}</div>
+            )}
           {/* Begin Page Content */}
           <div className="container-fluid">
             <Routes>

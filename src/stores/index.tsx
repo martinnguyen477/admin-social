@@ -6,6 +6,7 @@ import { persistReducer, persistStore } from "redux-persist";
 import { accountReducer } from "./account/reducers";
 import { usersReducer } from "./users/reducers";
 import { setAuthToken } from "helpers/set-auth-token";
+import { alertReducer } from "./alert/reducers";
 
 
 const persistConfig = {
@@ -19,6 +20,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   account: accountReducer,
   users: usersReducer,
+  alert: alertReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
