@@ -2,6 +2,9 @@ import {
   ADD_USER_FAILURE,
   ADD_USER_REQUEST,
   ADD_USER_SUCCESS,
+  DELETE_USERS_FAILURE,
+  DELETE_USERS_REQUEST,
+  DELETE_USERS_SUCCESS,
   GET_USER_BY_ID_FAILURE,
   GET_USER_BY_ID_REQUEST,
   GET_USER_BY_ID_SUCCESS,
@@ -16,12 +19,13 @@ import {
   UsersActionTypes,
 } from './types';
 
-import { Dispatch } from 'redux';
+import { AnyAction, Dispatch } from 'redux';
 import { userService } from '../../services';
 import { AlertActionTypes } from 'stores/alert/types';
 import { alertError, alertSuccess, clearAlert } from 'stores/alert/action';
 import { NavigateFunction } from 'react-router';
 import { UrlConstants } from 'constants/constants';
+import { ThunkDispatch } from 'redux-thunk';
 
 export const loadUsersPaging = (keyword: string, currentPage: number) => {
   return async (dispatch: Dispatch<UsersActionTypes>) => {
@@ -124,5 +128,29 @@ export const updateUser = (id: string, user: IUpdateUserRequest, navigation: Nav
     setTimeout(() => {
       dispatch(clearAlert());
     }, 3000);
+  };
+};
+
+export const deleteUsers = (userIds: string[]) => {
+  return async (dispatch: ThunkDispatch<any, any, AnyAction>) => {
+    try {
+      dispatch({
+        type: DELETE_USERS_REQUEST,
+      });
+
+      await userService.deleteUsers(userIds);
+
+      dispatch({
+        type: DELETE_USERS_SUCCESS,
+      });
+      
+      dispatch(alertSuccess("Xóa thành công"));
+      dispatch(loadUsersPaging('', 1));
+    } catch (error: any) {
+      dispatch({
+        type: DELETE_USERS_FAILURE,
+        payload: { error: error.toString() },
+      });
+    }
   };
 };

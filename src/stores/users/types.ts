@@ -15,6 +15,10 @@ export const UPDATE_USER_REQUEST = "UPDATE_USER_REQUEST";
 export const UPDATE_USER_SUCCESS = "UPDATE_USER_SUCCESS";
 export const UPDATE_USER_FAILURE = "UPDATE_USER_FAILURE";
 
+export const DELETE_USERS_REQUEST = 'DELETE_USERS_REQUEST';
+export const DELETE_USERS_SUCCESS = 'DELETE_USERS_SUCCESS';
+export const DELETE_USERS_FAILURE = 'DELETE_USERS_FAILURE';
+
 export interface IUser {
   _id: string;
   first_name: string;
@@ -110,6 +114,21 @@ interface UpdateUserFailure {
   }
 }
 
+interface DeleteUsersRequest {
+  type: typeof DELETE_USERS_REQUEST;
+}
+
+interface DeleteUsersSuccess {
+  type: typeof DELETE_USERS_SUCCESS;
+}
+
+interface DeleteUsersFailure {
+  type: typeof DELETE_USERS_FAILURE;
+  payload: {
+    error: string;
+  };
+}
+
 export type UsersActionTypes =
   | LoadUsersPagingRequest
   | LoadUsersPagingSuccess
@@ -122,4 +141,7 @@ export type UsersActionTypes =
   | GetUserByIdFailure
   | UpdateUserRequest
   | UpdateUserSuccess
-  | UpdateUserFailure;
+  | UpdateUserFailure
+  | DeleteUsersRequest
+  | DeleteUsersSuccess
+  | DeleteUsersFailure;

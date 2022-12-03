@@ -56,4 +56,11 @@ const updateUser = async (
   return res;
 };
 
-export const userService = { login, logout, getCurrentLoginUser, getUsersPaging, addUser, getUserById , updateUser};
+const deleteUsers = async (ids: string[]): Promise<any> => {
+  const res = await api.delete(`/v1/users`, { data: ids }).then((response) => {
+    return response.data;
+  });
+  return res;
+};
+
+export const userService = { login, logout, getCurrentLoginUser, getUsersPaging, addUser, getUserById , updateUser, deleteUsers};
