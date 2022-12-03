@@ -1,12 +1,12 @@
 /* REDUX - STORE  */
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunkMiddleware from 'redux-thunk';
-import { accountReducer } from "./account/reducers";
-
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import { persistReducer, persistStore } from "redux-persist";
-import { setAuthToken } from "../helpers/set-auth-token";
+import { accountReducer } from "./account/reducers";
 import { usersReducer } from "./users/reducers";
+import { setAuthToken } from "helpers/set-auth-token";
+
 
 const persistConfig = {
   key: 'root',

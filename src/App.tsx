@@ -4,7 +4,6 @@ import { Admin } from './pages/Admin/Admin';
 import { PrivateRoute } from './components';
 import { Login } from './pages/Account';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Users } from 'pages/Admin/Users/Users';
 
 function App() {
   return (

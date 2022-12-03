@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { AppState } from '../stores';
-import { AccountState } from '../stores/account/types';
+import { AppState } from 'stores';
+import { AccountState } from 'stores/account/types';
 
 interface PropsChild {
   children?: any
