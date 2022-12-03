@@ -5,6 +5,7 @@ import { getCurrentLoginUser } from 'stores/account/actions';
 import { Home } from './Home/Home';
 import { LeftMenu } from './LeftMenu/LeftMenu';
 import { TopBar } from './TopBar/TopBar';
+import { AddUser } from './Users/AddUser';
 import { Users } from './Users/Users';
 
 export const Admin = () => {
@@ -26,6 +27,7 @@ export const Admin = () => {
             <Routes>
               <Route path='users' element={<Users />} />
               <Route path='' element={<Home />} />
+              <Route path='/user-add' element={<AddUser />} />
             </Routes>
           </div>
           {/* /.container-fluid */}
