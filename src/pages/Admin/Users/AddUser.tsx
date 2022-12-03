@@ -3,7 +3,7 @@ import { UrlConstants } from 'constants/constants';
 import { validateEmail } from 'helpers/validation';
 import React, { ChangeEvent, FormEvent, Fragment, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AppState } from 'stores';
 import { addUser } from 'stores/users/actions';
 import { IAddUserRequest } from 'stores/users/types';
@@ -20,6 +20,7 @@ export const AddUser = () => {
 
   const loading = !!useSelector<AppState>((state) => state.users.loading);
   const dispatch = useDispatch();
+  const navigation = useNavigate();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -36,7 +37,7 @@ export const AddUser = () => {
         first_name,
         last_name,
       };
-      addUser(user)(dispatch);
+      addUser(user,navigation)(dispatch);
     }
   };
 

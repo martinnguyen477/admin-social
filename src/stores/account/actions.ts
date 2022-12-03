@@ -11,8 +11,9 @@ import {
 
 import { Dispatch } from 'redux';
 import { userService } from './../../services';
+import { NavigateFunction } from 'react-router';
 
-export const login = (email: string, password: string) => {
+export const login = (email: string, password: string, navigation: NavigateFunction) => {
   return async (dispatch: Dispatch<AccountActionTypes>) => {
     //STEP 1:
     dispatch({
@@ -29,6 +30,7 @@ export const login = (email: string, password: string) => {
         type: LOGIN_SUCCESS,
         payload: response,
       });
+      navigation('/'); 
     } catch (error) {
       dispatch({
         type: LOGIN_FAILURE,

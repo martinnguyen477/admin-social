@@ -1,7 +1,7 @@
 window.env = {
   "ALLUSERSPROFILE": "C:\\ProgramData",
   "APPDATA": "C:\\Users\\nqcuo\\AppData\\Roaming",
-  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_10192_EBCPVHWUTDYRQGHR",
+  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_7576_LNZYEAXDBVCLCVMX",
   "COLORTERM": "truecolor",
   "CommonProgramFiles": "C:\\Program Files\\Common Files",
   "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
@@ -88,7 +88,7 @@ window.env = {
   "OneDrive": "C:\\Users\\nqcuo\\OneDrive",
   "ORIGINAL_XDG_CURRENT_DESKTOP": "undefined",
   "OS": "Windows_NT",
-  "Path": "C:\\Users\\nqcuo\\AppData\\Local\\Temp\\yarn--1670061243112-0.3134700798648302;D:\\Storage\\Personal\\SourceCode\\admin-social\\admin-social\\node_modules\\.bin;C:\\Users\\nqcuo\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;C:\\Users\\nqcuo\\AppData\\Local\\Yarn\\bin;C:\\Program Files\\libexec\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\node-gyp-bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GitExtensions\\;C:\\Program Files\\Git\\cmd;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\Azure Data Studio\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\nqcuo\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\nqcuo\\.dotnet\\tools;C:\\Users\\nqcuo\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\nqcuo\\AppData\\Roaming\\npm",
+  "Path": "C:\\Users\\nqcuo\\AppData\\Local\\Temp\\yarn--1670077855722-0.4724429396022567;D:\\Storage\\Personal\\SourceCode\\admin-social\\admin-social\\node_modules\\.bin;C:\\Users\\nqcuo\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;C:\\Users\\nqcuo\\AppData\\Local\\Yarn\\bin;C:\\Program Files\\libexec\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\node-gyp-bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GitExtensions\\;C:\\Program Files\\Git\\cmd;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\Azure Data Studio\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\nqcuo\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\nqcuo\\.dotnet\\tools;C:\\Users\\nqcuo\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\nqcuo\\AppData\\Roaming\\npm",
   "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC;.CPL",
   "PROCESSOR_ARCHITECTURE": "AMD64",
   "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 142 Stepping 10, GenuineIntel",

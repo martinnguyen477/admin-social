@@ -14,7 +14,6 @@ export const Login = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const loading = !!useSelector<AppState>((state) => state.account.loading);
-  const tokenLogin = useSelector<AppState>((state) => state.account.token);
 
   const { email, password } = inputs;
   const dispatch = useDispatch();
@@ -22,9 +21,6 @@ export const Login = () => {
   useEffect(() => {
     dispatch(logout());
   }, []);
-
-  if(tokenLogin != null) 
-    navigate('/'); 
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -34,7 +30,7 @@ export const Login = () => {
     e.preventDefault();
     setSubmitted(true);
     if (email && password) {
-      login(email, password)(dispatch);
+      login(email, password,navigate)(dispatch);
     }
   };
 

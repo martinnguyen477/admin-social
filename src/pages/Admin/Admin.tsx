@@ -7,6 +7,7 @@ import { Home } from './Home/Home';
 import { LeftMenu } from './LeftMenu/LeftMenu';
 import { TopBar } from './TopBar/TopBar';
 import { AddUser } from './Users/AddUser';
+import { UpdateUser } from './Users/UpdateUser';
 import { Users } from './Users/Users';
 
 export const Admin = () => {
@@ -34,6 +35,7 @@ export const Admin = () => {
               <Route path='users' element={<Users />} />
               <Route path='' element={<Home />} />
               <Route path='/user-add' element={<AddUser />} />
+              <Route path='/user-edit/:id' element={<UpdateUser />} />
             </Routes>
           </div>
           {/* /.container-fluid */}
