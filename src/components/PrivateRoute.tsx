@@ -9,7 +9,7 @@ interface PropsChild {
 }
 
 export const PrivateRoute = ({children } : PropsChild) => {
-  //Lấy thông tin account state từ Store vào để dùng.
+  //Lấy thong tin account state từ Store vào để dung.
   const account : AccountState = useSelector((state : AppState) => state.account);
  
   return account.token ? children : <Navigate to='/login'/>;

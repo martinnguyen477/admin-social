@@ -1,4 +1,5 @@
 import {useState } from 'react'
+import { Link } from 'react-router-dom';
 
 export const LeftMenu = () => {
     const [isToggled, setIsToggled] = useState(false);
@@ -7,12 +8,12 @@ export const LeftMenu = () => {
     return (
         <ul className={'navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar' + (isToggled ? ' toggled' : '')} >
             {/* Sidebar - Brand */}
-            <a className="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <Link className="sidebar-brand d-flex align-items-center justify-content-center" to='/'>
                 <div className="sidebar-brand-icon rotate-n-15">
                     <i className="fas fa-laugh-wink" />
                 </div>
-                <div className="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
-            </a>
+                <div className="sidebar-brand-text mx-3"> Admin <sup>Social</sup></div>
+            </Link>
             {/* Divider */}
             <hr className="sidebar-divider my-0" />
             {/* Nav Item - Dashboard */}
@@ -31,12 +32,12 @@ export const LeftMenu = () => {
             <li className="nav-item">
                 <a className={'nav-link' + (!isComponentShow ? ' collapsed' : '')} href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded={isComponentShow} aria-controls="collapseTwo" onClick={() => setIsComponentShow(!isComponentShow)}>
                     <i className="fas fa-fw fa-cog" />
-                    <span>Components</span>
+                    <span>Hệ thống</span>
                 </a>
                 <div id="collapseTwo" className={'collapse' + (isComponentShow ? ' show' : '')} aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div className="bg-white py-2 collapse-inner rounded">
                         <h6 className="collapse-header">Custom Components:</h6>
-                        <a className="collapse-item" href="buttons.html">Buttons</a>
+                        <Link className="collapse-item" to='/users'>Người dùng</Link>
                         <a className="collapse-item" href="cards.html">Cards</a>
                     </div>
                 </div>

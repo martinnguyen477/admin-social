@@ -6,6 +6,7 @@ import { accountReducer } from "./account/reducers";
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import { persistReducer, persistStore } from "redux-persist";
 import { setAuthToken } from "../helpers/set-auth-token";
+import { usersReducer } from "./users/reducers";
 
 const persistConfig = {
   key: 'root',
@@ -16,7 +17,8 @@ const persistConfig = {
 // TẠO STORE - TỔNG REDUCERS (CHỨA CÁC REDUCERS CỦA CÁC FEATURE) - (ACCOUNT, PROFILE...)
 // Khi Reducer tương tác thì Store này tự nhận State mới từ Action Dispatch vào.
 const rootReducer = combineReducers({
-  account: accountReducer
+  account: accountReducer,
+  users: usersReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
