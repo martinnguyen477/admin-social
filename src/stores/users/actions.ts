@@ -143,7 +143,7 @@ export const deleteUsers = (userIds: string[]) => {
       dispatch({
         type: DELETE_USERS_SUCCESS,
       });
-      
+
       dispatch(alertSuccess("Xóa thành công"));
       dispatch(loadUsersPaging('', 1));
     } catch (error: any) {
@@ -152,5 +152,8 @@ export const deleteUsers = (userIds: string[]) => {
         payload: { error: error.toString() },
       });
     }
+    setTimeout(() => {
+      dispatch(clearAlert());
+    }, 3000);
   };
 };
